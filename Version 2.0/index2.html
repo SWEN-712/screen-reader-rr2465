@@ -1,0 +1,143 @@
+<!--
+Author: Vaibhavi Raut
+Email: rr2465@rit.edu
+Modification: Use Case Diagram
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>UML Diagram Generator</title>
+</head>
+
+<body>
+ 	<script src="script2.js"></script>
+    <h1>Information Input for UML UseCase Diagram</h1>
+    <h2>Actor</h2>
+    <input type="checkbox" id="actorInclude" checked />Include?<br>
+	Actor Role: <input type="text" name="Actor" id="actorName"><br>
+	<input type="checkbox" name="checkbox1" id="auc1" />Connection to UseCase1?<br>
+	<input type="checkbox" name="checkbox1" id="auc2" />Connection to UseCase2?<br>
+	<input type="checkbox" name="checkbox1" id="auc3">Connection to UseCase3?<br>
+	<input type="checkbox" name="checkbox1" id="auc4">Connection to UseCase4?<br>
+	<input type="checkbox" name="checkbox1" id="auc5" />Connection to UseCase5?<br>
+
+	<h2>System</h2>
+	<input type="checkbox" id="frameBoxInclude" checked />Include?<br>
+	System Name: <input type="text" name="frameBox" id="frameBoxName"><br>
+
+	<h2>UseCase 1</h2>
+	<input type="checkbox" id="uc1Include" checked />Include?<br>
+	Use Case Name: <input type="text" name="UseCase1" id="uc1Name"><br>
+	<input type="checkbox" id="1_InUc2">Include UseCase2?
+	<input type="checkbox" id="1_ExUc2">Extend UseCase2?<br>
+	<input type="checkbox" id="1_InUc3">Include UseCase3?
+	<input type="checkbox" id="1_ExUc3">Extend UseCase3?<br>
+	<input type="checkbox" id="1_InUc4">Include UseCase4?
+	<input type="checkbox" id="1_ExUc4">Extend UseCase4?<br>
+	<input type="checkbox" id="1_InUc5">Include UseCase5?
+	<input type="checkbox" id="1_ExUc5">Extend UseCase5?<br>
+
+	<h2>UseCase 2</h2>
+	<input type="checkbox" id="uc2Include" />Include?<br>
+	Use Case Name: <input type="text" name="UseCase2" id="uc2Name"><br>
+	<input type="checkbox" id="2_InUc1">Include UseCase1? 
+	<input type="checkbox" id="2_ExUc1">Extend UseCase1?<br>
+	<input type="checkbox" id="2_InUc3">Include UseCase3?
+	<input type="checkbox" id="2_ExUc3">Extend UseCase3?<br>
+	<input type="checkbox" id="2_InUc4">Include UseCase4?
+	<input type="checkbox" id="2_ExUc4">Extend UseCase4?<br>
+	<input type="checkbox" id="2_InUc5">Include UseCase5?
+	<input type="checkbox" id="2_ExUc5">Extend UseCase5?<br>
+
+	<h2>UseCase 3</h2>
+	<input type="checkbox" id="uc3Include" />Include?<br>
+	Use Case Name: <input type="text" name="UseCase3" id="uc3Name"><br>	
+	<input type="checkbox" id="3_InUc1">Include UseCase1? 
+	<input type="checkbox" id="3_ExUc1">Extend UseCase1?<br>
+	<input type="checkbox" id="3_InUc2">Include UseCase2?
+	<input type="checkbox" id="3_ExUc2">Extend UseCase2?<br>
+	<input type="checkbox" id="3_InUc4">Include UseCase4?
+	<input type="checkbox" id="3_ExUc4">Extend UseCase4?<br>
+	<input type="checkbox" id="3_InUc5">Include UseCase5?
+	<input type="checkbox" id="3_ExUc5">Extend UseCase5?<br>
+
+	<h2>UseCase 4</h2>
+	<input type="checkbox" id="uc4Include" />Include?<br>
+	Use Case Name: <input type="text" name="UseCase4" id="uc4Name"><br>
+	<input type="checkbox" id="4_InUc1">Include UseCase1? 
+	<input type="checkbox" id="4_ExUc1">Extend UseCase1?<br>
+	<input type="checkbox" id="4_InUc2">Include UseCase2?
+	<input type="checkbox" id="4_ExUc2">Extend UseCase2?<br>
+	<input type="checkbox" id="4_InUc3">Include UseCase3?
+	<input type="checkbox" id="4_ExUc3">Extend UseCase3?<br>
+	<input type="checkbox" id="4_InUc5">Include UseCase5?
+	<input type="checkbox" id="4_ExUc5">Extend UseCase5?<br>
+	
+	<h2>UseCase 5</h2>
+	<input type="checkbox" id="uc5Include" />Include?<br>
+	Use Case Name: <input type="text" name="UseCase5" id="uc5Name"><br>
+	<input type="checkbox" id="5_InUc1">Include UseCase1? 
+	<input type="checkbox" id="5_ExUc1">Extend UseCase1?<br>
+	<input type="checkbox" id="5_InUc2">Include UseCase2?
+	<input type="checkbox" id="5_ExUc2">Extend UseCase2?<br>
+	<input type="checkbox" id="5_InUc3">Include UseCase3?
+	<input type="checkbox" id="5_ExUc3">Extend UseCase3?<br>
+	<input type="checkbox" id="5_InUc4">Include UseCase4?
+	<input type="checkbox" id="5_ExUc4">Extend UseCase4?<br>
+
+	<br>
+
+	<button id="generate" onclick="generateSvg()">Generate UseCase Diagram</button>
+	<button id="downloadSvg" onclick="downloadSvg()" style="display: none;" >Download SVG for UML Diagram</button> <br>
+
+	<svg width = "2000" height = "2000" id="svgPanel"></svg>
+
+<!--
+	<svg width = "2000" height = "2000"> 
+		ac = <circle cx="60" cy="300" r="20" style="fill: white; stroke:black; stroke-width:1" />
+		 vertical line 
+		<polyline points = "60 320, 60 370" style = "fill: black; stroke: black" />
+
+		<g id="hands">
+			<line x1="60" y1="330" x2="90" y2="355" style=" fill: black; stroke: black;" />
+		</g>
+		<use xlink:href="#hands" transform="scale(-1 1) translate(-120 0)"/>
+
+		 <g id="legs">
+        	<use xlink:href="#hands" transform="scale(-1 1) translate(-120 40)"/>    
+        </g>
+        <use xlink:href="#legs" transform="scale(-1 1) translate(-120 0)"/>
+
+        frameBox = <rect x="200" y="50" width="500" height="600" style="fill:white; stroke-width: 1; stroke:black" />
+
+        uc1 = <ellipse cx="350" cy="150" rx="80" ry="40" style = "fill: white; stroke: black; stroke-width: 1" title="${usecase1.name}" />
+		uc2 = <ellipse cx="450" cy="250" rx="80" ry="40" style = "fill: white; stroke: black; stroke-width: 1" title="${usecase2.name}" />
+		uc3 = <ellipse cx="350" cy="350" rx="80" ry="40" style = "fill: white; stroke: black; stroke-width: 1" title="${usecase3.name}" />
+		uc4 = <ellipse cx="450" cy="450" rx="80" ry="40" style = "fill: white; stroke: black; stroke-width: 1" title="${usecase4.name}" />
+		uc5 = <ellipse cx="350" cy="550" rx="80" ry="40" style = "fill: white; stroke: black; stroke-width: 1" title="${usecase5.name}" />
+
+		lineA1 = <line x1="90" y1="355" x2="270" y2="150" style="stroke-width: 1; stroke:black" />
+		lineA2 = <line x1="90" y1="355" x2="370" y2="250" style="stroke-width: 1; stroke:black" />
+		lineA3 = <line x1="90" y1="355" x2="270" y2="350" style="stroke-width: 1; stroke:black" />
+		lineA4 = <line x1="90" y1="355" x2="370" y2="450" style="stroke-width: 1; stroke:black" />
+		lineA5 = <line x1="90" y1="355" x2="270" y2="550" style="stroke-width: 1; stroke:black" />
+
+		lineuc12 = <line x1="430" y1="150" x2="500" y2="220" style="fill: none; stroke-width:1; stroke:black; stroke-dasharray: 10" />
+		<g id="arrowExt">
+			<line x1="430" y1="150" x2="450" y2="160" style="fill:none; stroke-width:1; stroke:black" />
+		</g>
+		<use xlink:href="#arrowExt" transform="scale(-1 1) translate(-120 0)"/>
+
+	</svg>
+<svg width = "2000" height = "2000">
+	<circle cx="60" cy="300" r="20" style="fill: white; stroke:black; stroke-width:1" />
+	<polyline points = "60 320, 60 370" style = "fill: black; stroke: black" />	
+	<polyline points = "60 330, 90 335" style = "fill: black; stroke: black" />
+</svg>
+-->
+
+</body>
+
+</html>

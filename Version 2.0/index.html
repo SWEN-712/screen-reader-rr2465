@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <h1>Information Input</h1>
+    <h2>Class 1</h2>
+    <input type="checkbox" id="class1Include" checked /> Include? <br />
+    <input type="text" id="class1Name" /> Class Name <br />
+    <input type="checkbox" id="class1To2" /> Connection from this to Class 2 (if Class 2 exists)? <br />
+    <input type="checkbox" id="class1To3" /> Connection from this to Class 3 (if Class 3 exists)? <br />
+    <input type="checkbox" id="class1To4" /> Connection from this to Class 4 (if Class 4 exists)? <br />
+    <br />
+    <h2>Class 2</h2>
+    <input type="checkbox" id="class2Include" checked /> Include? <br />
+    <input type="text" id="class2Name" /> Class Name <br />
+    <input type="checkbox" id="class2To1" /> Connection from this to Class 1 (if Class 1 exists)? <br />
+    <input type="checkbox" id="class2To3" /> Connection from this to Class 3 (if Class 3 exists)? <br />
+    <input type="checkbox" id="class2To4" /> Connection from this to Class 4 (if Class 4 exists)? <br />
+    <br />
+    <h2>Class 3</h2>
+    <input type="checkbox" id="class3Include" checked /> Include? <br />
+    <input type="text" id="class3Name" /> Class Name <br />
+    <input type="checkbox" id="class3To1" /> Connection from this to Class 1 (if Class 1 exists)? <br />
+    <input type="checkbox" id="class3To2" /> Connection from this to Class 2 (if Class 2 exists)? <br />
+    <input type="checkbox" id="class3To4" /> Connection from this to Class 4 (if Class 4 exists)? <br />
+    <br />
+    <h2>Class 4</h2>
+    <input type="checkbox" id="class4Include" checked /> Include? <br />
+    <input type="text" id="class4Name" /> Class Name <br />
+    <input type="checkbox" id="class4To1" /> Connection from this to Class 1 (if Class 1 exists)? <br />
+    <input type="checkbox" id="class4To2" /> Connection from this to Class 2 (if Class 2 exists)? <br />
+    <input type="checkbox" id="class4To3" /> Connection from this to Class 3 (if Class 3 exists)? <br />
+    <br />
+    <button id="generate" onclick="generateSvg()">Generate</button>
+    <br />
+    <button id="downloadSvg" onclick="downloadSvg()" style="display: none;">Download Svg</button>
+    <br />
+    <svg width="1000" height="1000" id="svgPanel"></svg>
+</body>
+
+</html>

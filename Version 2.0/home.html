@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+	<h1>UML Diagram Generator</h1>
+	<br>
+	<select onchange="change(this.value)">
+		<option>Select</option>
+		<option value="index.html">Class Diagram</option>	
+		<option value="index2.html">Use Case Diagram</option>
+	</select>
+	
+	<script type="text/javascript">
+		function change(arg) {
+				// body...
+				window.location = arg;
+			}	
+	</script>
+
+</body>
+</html>
